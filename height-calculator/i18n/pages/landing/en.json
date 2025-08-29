@@ -20,8 +20,7 @@
     "announcement": { "label": "Tools", "title": "New: Child Height Predictor", "url": "/#feature" },
     "tip": "100% free • No signup • Instant results",
     "buttons": [
-      { "title": "Calculate Now", "icon": "RiFlashlightFill", "url": "/function", "target": "_self", "variant": "default" },
-      { "title": "Child Predictor", "icon": "RiBarChart2Line", "url": "/#usage", "target": "_self", "variant": "outline" }
+      { "title": "Calculate Now", "icon": "RiFlashlightFill", "url": "/function", "target": "_self", "variant": "default" }
     ],
     "show_happy_users": false, "show_badge": false
   },

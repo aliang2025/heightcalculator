@@ -63,7 +63,7 @@ export default function Hero({ hero }: { hero: HeroType }) {
               dangerouslySetInnerHTML={{ __html: hero.description || "" }}
             />
             {hero.buttons && (
-              <div className="mt-10 flex flex-col justify-center gap-6 sm:flex-row">
+              <div className="mt-10 flex justify-center gap-6">
                 {hero.buttons.map((item, i) => {
                   return (
                     <Link
@@ -79,7 +79,7 @@ export default function Hero({ hero }: { hero: HeroType }) {
                       >
                         {item.title}
                         {item.icon && (
-                          <Icon name={item.icon} className="ml-1" />
+                          <Icon name={item.icon} className="ml-2 w-5 h-5" />
                         )}
                       </Button>
                     </Link>

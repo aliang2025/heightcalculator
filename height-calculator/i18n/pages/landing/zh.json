@@ -75,13 +75,6 @@
         "url": "/function",
         "target": "_self",
         "variant": "default"
-      },
-      {
-        "title": "查看成长曲线",
-        "icon": "RiDiscordFill",
-        "url": "/#usage",
-        "target": "_self",
-        "variant": "outline"
       }
     ],
     "show_happy_users": true,

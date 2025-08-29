@@ -72,7 +72,7 @@
       {
         "title": "立即计算",
         "icon": "RiFlashlightFill",
-        "url": "/#feature",
+        "url": "/function",
         "target": "_self",
         "variant": "default"
       },

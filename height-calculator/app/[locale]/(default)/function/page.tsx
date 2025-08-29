@@ -82,20 +82,20 @@ export default function HeightCalculatorPage() {
             <Card className="p-6 sm:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 shadow-md">
               <h3 className="font-semibold text-blue-900 mb-4 text-base lg:text-lg">📊 {t('results.algorithms.title')}</h3>
               <div className="space-y-3 text-sm lg:text-base text-blue-800">
-                <p>• <strong>Khamis-Roche Method:</strong> Scientific prediction combining parental height, current height and age</p>
-                <p>• <strong>Mid-Parental Height:</strong> Traditional prediction based on genetic factors</p>
-                <p>• <strong>Percentile Tracking:</strong> Trend prediction based on current growth percentile</p>
+                <p>• <strong>{t('results.algorithms.khamis_roche.name')}:</strong> {t('results.algorithms.khamis_roche.description')}</p>
+                <p>• <strong>{t('results.algorithms.mid_parental.name')}:</strong> {t('results.algorithms.mid_parental.description')}</p>
+                <p>• <strong>{t('results.algorithms.percentile_tracking.name')}:</strong> {t('results.algorithms.percentile_tracking.description')}</p>
               </div>
             </Card>
 
             {/* 隐私保护说明 */}
             <Card className="p-6 sm:p-8 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 shadow-md">
-              <h3 className="font-semibold text-green-900 mb-4 text-base lg:text-lg">🔒 Privacy Protection</h3>
+              <h3 className="font-semibold text-green-900 mb-4 text-base lg:text-lg">🔒 {t('results.privacy.title')}</h3>
               <div className="space-y-3 text-sm lg:text-base text-green-800">
-                <p>• All calculations completed locally on your device</p>
-                <p>• No personal information sent to servers</p>
-                <p>• No storage or recording of your input data</p>
-                <p>• Can be used offline, no data leakage concerns</p>
+                <p>• {t('results.privacy.local_calculation')}</p>
+                <p>• {t('results.privacy.no_server_data')}</p>
+                <p>• {t('results.privacy.no_storage')}</p>
+                <p>• {t('results.privacy.offline_usage')}</p>
               </div>
             </Card>
           </div>

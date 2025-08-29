@@ -160,10 +160,10 @@
       "waiting_message": "Please fill in the information on the left to get prediction results.",
       "tabs": {
         "prediction": "Height Prediction",
-        "growth_chart": "Growth Chart",
-        "analysis": "Detailed Analysis",
-        "health": "Health Status",
-        "recommendations": "Growth Recommendations"
+        "growth_chart": "Chart",
+        "analysis": "Analysis",
+        "health": "Health",
+        "recommendations": "Recommendations"
       },
       "prediction": {
         "primary_title": "Predicted Adult Height",
@@ -192,7 +192,19 @@
         "name": "Algorithm Name",
         "predicted_height": "Predicted Height",
         "confidence": "Confidence",
-        "description": "Algorithm Description"
+        "description": "Algorithm Description",
+        "khamis_roche": {
+          "name": "Khamis-Roche Method",
+          "description": "Scientific prediction combining parental height, current height and age"
+        },
+        "mid_parental": {
+          "name": "Mid-Parental Height",
+          "description": "Traditional prediction based on genetic factors"
+        },
+        "percentile_tracking": {
+          "name": "Percentile Tracking",
+          "description": "Trend prediction based on current growth percentile"
+        }
       },
       "growth_chart": {
         "title": "WHO Standard Growth Chart",
@@ -252,6 +264,13 @@
       },
       "download_pdf": "Download Complete Report (PDF)",
       "pdf_note": "Note: PDF report is in English to ensure optimal display quality.",
+      "privacy": {
+        "title": "Privacy Protection",
+        "local_calculation": "All calculations completed locally on your device",
+        "no_server_data": "No personal information sent to servers",
+        "no_storage": "No storage or recording of your input data",
+        "offline_usage": "Can be used offline, no data leakage concerns"
+      },
       "disclaimer": {
         "title": "Disclaimer",
         "content": "This prediction is for reference only. Actual height is influenced by genetics, nutrition, diseases and other factors. Consult a professional doctor for health concerns."

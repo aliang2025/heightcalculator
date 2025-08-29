@@ -192,7 +192,19 @@
         "name": "算法名称",
         "predicted_height": "预测身高",
         "confidence": "置信度",
-        "description": "算法说明"
+        "description": "算法说明",
+        "khamis_roche": {
+          "name": "Khamis-Roche 改良法",
+          "description": "基于父母身高、当前身高和年龄的综合预测模型，适用于2-18岁儿童"
+        },
+        "mid_parental": {
+          "name": "中位父母身高法",
+          "description": "基于父母身高的传统预测方法，遗传因素占主导"
+        },
+        "percentile_tracking": {
+          "name": "百分位追踪法",
+          "description": "基于当前身高百分位的趋势预测方法"
+        }
       },
       "growth_chart": {
         "title": "WHO 标准成长曲线",
@@ -252,6 +264,13 @@
       },
       "download_pdf": "下载完整报告 (PDF)",
       "pdf_note": "注意：PDF报告为英文版本，以确保最佳显示效果。",
+      "privacy": {
+        "title": "隐私保护",
+        "local_calculation": "所有计算均在您的设备本地完成",
+        "no_server_data": "不向服务器发送任何个人信息",
+        "no_storage": "不存储或记录您的输入数据",
+        "offline_usage": "可离线使用，无数据泄露风险"
+      },
       "disclaimer": {
         "title": "免责声明",
         "content": "本预测结果仅供参考，实际身高受遗传、营养、疾病等多种因素影响。如有健康疑问，请咨询专业医生。"

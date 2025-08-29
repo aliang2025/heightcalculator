@@ -87,26 +87,34 @@ export default function ResultPanel({ data, result }: ResultPanelProps) {
 
       {/* 详细分析标签页 */}
       <Tabs defaultValue="algorithms" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 h-auto">
-          <TabsTrigger value="algorithms" className="flex items-center gap-1 text-xs sm:text-sm h-10 lg:h-12">
-            <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden sm:inline">{t('tabs.analysis')}</span>
-            <span className="sm:hidden">算法</span>
+        <TabsList className="grid w-full grid-cols-2 xl:grid-cols-4 gap-1 p-1">
+          <TabsTrigger 
+            value="algorithms" 
+            className="flex flex-col items-center justify-center gap-1 text-xs px-2 py-3 min-h-[60px] data-[state=active]:bg-white"
+          >
+            <TrendingUp className="w-4 h-4 flex-shrink-0" />
+            <span className="text-center leading-tight">{t('tabs.analysis')}</span>
           </TabsTrigger>
-          <TabsTrigger value="growth" className="flex items-center gap-1 text-xs sm:text-sm h-10 lg:h-12">
-            <Activity className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden sm:inline">{t('tabs.growth_chart')}</span>
-            <span className="sm:hidden">图表</span>
+          <TabsTrigger 
+            value="growth" 
+            className="flex flex-col items-center justify-center gap-1 text-xs px-2 py-3 min-h-[60px] data-[state=active]:bg-white"
+          >
+            <Activity className="w-4 h-4 flex-shrink-0" />
+            <span className="text-center leading-tight">{t('tabs.growth_chart')}</span>
           </TabsTrigger>
-          <TabsTrigger value="health" className="flex items-center gap-1 text-xs sm:text-sm h-10 lg:h-12">
-            <Users className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden sm:inline">{t('tabs.health')}</span>
-            <span className="sm:hidden">健康</span>
+          <TabsTrigger 
+            value="health" 
+            className="flex flex-col items-center justify-center gap-1 text-xs px-2 py-3 min-h-[60px] data-[state=active]:bg-white"
+          >
+            <Users className="w-4 h-4 flex-shrink-0" />
+            <span className="text-center leading-tight">{t('tabs.health')}</span>
           </TabsTrigger>
-          <TabsTrigger value="recommendations" className="flex items-center gap-1 text-xs sm:text-sm h-10 lg:h-12">
-            <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden sm:inline">{t('tabs.recommendations')}</span>
-            <span className="sm:hidden">建议</span>
+          <TabsTrigger 
+            value="recommendations" 
+            className="flex flex-col items-center justify-center gap-1 text-xs px-2 py-3 min-h-[60px] data-[state=active]:bg-white"
+          >
+            <BookOpen className="w-4 h-4 flex-shrink-0" />
+            <span className="text-center leading-tight break-words hyphens-auto">{t('tabs.recommendations')}</span>
           </TabsTrigger>
         </TabsList>
 

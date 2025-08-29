@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Legend } from 'recharts';
 import { HeightCalculatorData, PredictionResult, GrowthChartData } from '@/types/height.types';
 import { calculateAgeInYears, calculateAgeInMonths } from '@/utils/height-calculations';
@@ -33,6 +34,8 @@ const WHO_REFERENCE_DATA = [
 ];
 
 export default function GrowthChart({ data, result }: GrowthChartProps) {
+  const t = useTranslations('function.results.growth_chart');
+  
   const chartData = useMemo(() => {
     const currentAge = calculateAgeInYears(data.birthDate);
     const currentAgeMonths = calculateAgeInMonths(data.birthDate);
@@ -42,19 +45,19 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
     const chartPoints = WHO_REFERENCE_DATA.map(point => {
       const baseData: any = {
         age: point.age,
-        [`标准50%`]: point[`${gender}_p50` as keyof typeof point],
-        [`标准90%`]: point[`${gender}_p90` as keyof typeof point],
-        [`标准10%`]: point[`${gender}_p10` as keyof typeof point],
+        [`${t('percentile_50')}`]: point[`${gender}_p50` as keyof typeof point],
+        [`${t('percentile_90')}`]: point[`${gender}_p90` as keyof typeof point],
+        [`${t('percentile_10')}`]: point[`${gender}_p10` as keyof typeof point],
       };
 
       // 添加当前身高点
       if (point.age === currentAge) {
-        baseData['当前身高'] = data.currentHeight;
+        (baseData as any)[t('current_height')] = data.currentHeight;
       }
 
       // 添加预测点（18岁）
       if (point.age === 18) {
-        baseData['预测身高'] = result.primaryPrediction;
+        (baseData as any)[t('predicted_height')] = result.primaryPrediction;
       }
 
       return baseData;
@@ -71,10 +74,10 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
         const ageData = WHO_REFERENCE_DATA.find(d => d.age === age);
         predictionYears.push({
           age,
-          [`标准50%`]: ageData ? ageData[`${gender}_p50` as keyof typeof ageData] as number : null,
-          [`标准90%`]: ageData ? ageData[`${gender}_p90` as keyof typeof ageData] as number : null,
-          [`标准10%`]: ageData ? ageData[`${gender}_p10` as keyof typeof ageData] as number : null,
-          '预测轨迹': predictedHeight
+          [`${t('percentile_50')}`]: ageData ? ageData[`${gender}_p50` as keyof typeof ageData] as number : null,
+          [`${t('percentile_90')}`]: ageData ? ageData[`${gender}_p90` as keyof typeof ageData] as number : null,
+          [`${t('percentile_10')}`]: ageData ? ageData[`${gender}_p10` as keyof typeof ageData] as number : null,
+          [t('predicted_trajectory')]: predictedHeight
         });
       }
 
@@ -82,21 +85,29 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
       chartPoints.forEach(point => {
         const predYear = predictionYears.find(p => p.age === point.age);
         if (predYear) {
-          point['预测轨迹'] = predYear['预测轨迹'];
+          (point as any)[t('predicted_trajectory')] = (predYear as any)[t('predicted_trajectory')];
         }
       });
 
       // 添加当前身高到预测轨迹的起点
       const currentPoint = chartPoints.find(p => p.age === currentAge);
       if (currentPoint) {
-        currentPoint['预测轨迹'] = data.currentHeight;
+        (currentPoint as any)[t('predicted_trajectory')] = data.currentHeight;
       }
     }
 
     return chartPoints;
-  }, [data, result]);
+  }, [data, result, t]);
 
   const currentAge = calculateAgeInYears(data.birthDate);
+  
+  // 定义动态的dataKey值
+  const percentile10Key = t('percentile_10');
+  const percentile50Key = t('percentile_50'); 
+  const percentile90Key = t('percentile_90');
+  const currentHeightKey = t('current_height');
+  const predictedTrajectoryKey = t('predicted_trajectory');
+  const predictedHeightKey = t('predicted_height');
 
   return (
     <div className="h-80 w-full">
@@ -116,7 +127,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
             type="number"
             scale="linear"
             domain={['dataMin', 'dataMax']}
-            tickFormatter={(value) => `${value}岁`}
+            tickFormatter={(value) => `${value} ${t('age_axis').split(' ')[1]}`}
           />
           <YAxis 
             domain={['dataMin - 10', 'dataMax + 10']}
@@ -127,7 +138,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
               if (value === null || value === undefined) return [null, name];
               return [`${Number(value).toFixed(1)}cm`, name];
             }}
-            labelFormatter={(label) => `年龄: ${label}岁`}
+            labelFormatter={(label) => `${t('age_axis')}: ${label}`}
             contentStyle={{
               backgroundColor: 'white',
               border: '1px solid #e2e8f0',
@@ -140,7 +151,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
           {/* WHO标准参考线 */}
           <Line 
             type="monotone" 
-            dataKey="标准10%" 
+            dataKey={percentile10Key} 
             stroke="#e2e8f0" 
             strokeWidth={1}
             strokeDasharray="2 2"
@@ -149,7 +160,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
           />
           <Line 
             type="monotone" 
-            dataKey="标准50%" 
+            dataKey={percentile50Key} 
             stroke="#94a3b8" 
             strokeWidth={2}
             dot={false}
@@ -157,7 +168,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
           />
           <Line 
             type="monotone" 
-            dataKey="标准90%" 
+            dataKey={percentile90Key} 
             stroke="#e2e8f0" 
             strokeWidth={1}
             strokeDasharray="2 2"
@@ -168,7 +179,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
           {/* 当前身高点 */}
           <Line 
             type="monotone" 
-            dataKey="当前身高" 
+            dataKey={currentHeightKey} 
             stroke="#3b82f6" 
             strokeWidth={0}
             dot={{ fill: '#3b82f6', strokeWidth: 2, r: 6 }}
@@ -178,7 +189,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
           {/* 预测轨迹 */}
           <Line 
             type="monotone" 
-            dataKey="预测轨迹" 
+            dataKey={predictedTrajectoryKey} 
             stroke="#f59e0b" 
             strokeWidth={3}
             strokeDasharray="5 5"
@@ -189,7 +200,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
           {/* 最终预测点 */}
           <Line 
             type="monotone" 
-            dataKey="预测身高" 
+            dataKey={predictedHeightKey} 
             stroke="#ef4444" 
             strokeWidth={0}
             dot={{ fill: '#ef4444', strokeWidth: 2, r: 6 }}
@@ -201,7 +212,7 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
             x={currentAge} 
             stroke="#6366f1" 
             strokeDasharray="3 3"
-            label={{ value: "当前年龄", position: "top" }}
+            label={{ value: t('current_age_label'), position: "top" }}
           />
         </LineChart>
       </ResponsiveContainer>
@@ -210,28 +221,27 @@ export default function GrowthChart({ data, result }: GrowthChartProps) {
       <div className="mt-4 flex flex-wrap gap-4 text-xs text-gray-600">
         <div className="flex items-center gap-2">
           <div className="w-3 h-0.5 bg-gray-400"></div>
-          <span>WHO标准曲线</span>
+          <span>{t('who_standard_curves')}</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-          <span>当前身高</span>
+          <span>{t('current_height')}</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-0.5 bg-yellow-500" style={{ borderTop: '2px dashed' }}></div>
-          <span>预测轨迹</span>
+          <span>{t('predicted_trajectory')}</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-          <span>预测成年身高</span>
+          <span>{t('predicted_adult_height')}</span>
         </div>
       </div>
 
       {/* 图表说明 */}
       <div className="mt-4 p-3 bg-blue-50 rounded-lg text-sm text-blue-700">
         <p>
-          📈 <strong>图表说明：</strong>
-          灰色曲线代表WHO标准身高范围（10%-90%），蓝点为当前身高位置，
-          黄色虚线显示预测的成长轨迹，红点为预测的成年身高。
+          📈 <strong>{t('chart_description_title')}:</strong>
+          {t('chart_description_content')}
         </p>
       </div>
     </div>

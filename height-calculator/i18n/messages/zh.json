@@ -112,5 +112,150 @@
       "pending": "已注册，未支付",
       "completed": "已支付"
     }
+  },
+  "function": {
+    "title": "儿童身高预测与成长报告",
+    "subtitle": "输入儿童信息，获取专业的未来身高预测、成长曲线分析及个性化建议。",
+    "form": {
+      "title": "输入儿童信息",
+      "progress": "表单完成度",
+      "unit_label": "测量单位",
+      "metric": "公制 (cm/kg)",
+      "imperial": "英制 (in/lbs)",
+      "child_info": "儿童基本信息",
+      "gender": "性别",
+      "gender_placeholder": "选择性别",
+      "gender_male": "男孩",
+      "gender_female": "女孩",
+      "birth_date": "出生日期",
+      "birth_date_placeholder": "年/月/日",
+      "current_height": "当前身高",
+      "current_height_placeholder": "请输入身高 (cm)",
+      "current_weight": "当前体重",
+      "current_weight_placeholder": "请输入体重 (kg)",
+      "parent_info": "父母身高信息",
+      "father_height": "父亲身高",
+      "father_height_placeholder": "请输入父亲身高 (cm)",
+      "mother_height": "母亲身高",
+      "mother_height_placeholder": "请输入母亲身高 (cm)",
+      "calculate_button": "开始计算预测",
+      "calculating": "计算中...",
+      "reset_button": "重置",
+      "privacy_note": "* 为必填项目。所有信息将在本地处理，确保隐私安全。",
+      "errors": {
+        "gender_required": "请选择性别",
+        "birth_date_required": "请选择出生日期",
+        "height_required": "请输入当前身高",
+        "weight_required": "请输入当前体重",
+        "father_height_required": "请输入父亲身高",
+        "mother_height_required": "请输入母亲身高",
+        "height_invalid": "身高必须在 40-250cm 之间",
+        "weight_invalid": "体重必须在 2-200kg 之间",
+        "birth_date_invalid": "出生日期不能超过今天",
+        "age_invalid": "年龄必须在 2-18 岁之间"
+      }
+    },
+    "results": {
+      "title": "预测结果与报告",
+      "waiting_message": "请在左侧填写信息以获取预测结果。",
+      "tabs": {
+        "prediction": "身高预测",
+        "growth_chart": "成长曲线",
+        "analysis": "详细分析",
+        "health": "健康状况",
+        "recommendations": "成长建议"
+      },
+      "prediction": {
+        "primary_title": "预测成年身高",
+        "range_title": "预测范围",
+        "confidence_title": "预测置信度",
+        "percentile_title": "当前身高百分位",
+        "percentile_desc": "在同年龄段儿童中的身高排名",
+        "expected_growth": "预计增长",
+        "cm_unit": "厘米",
+        "confidence_unit": "%"
+      },
+      "bmi": {
+        "title": "BMI 分析",
+        "current_bmi": "当前 BMI",
+        "category": "体重状态",
+        "recommendation": "建议",
+        "categories": {
+          "underweight": "偏瘦",
+          "normal": "正常",
+          "overweight": "偏胖",
+          "obese": "肥胖"
+        }
+      },
+      "algorithms": {
+        "title": "预测算法对比",
+        "name": "算法名称",
+        "predicted_height": "预测身高",
+        "confidence": "置信度",
+        "description": "算法说明"
+      },
+      "growth_chart": {
+        "title": "WHO 标准成长曲线",
+        "age_axis": "年龄 (岁)",
+        "height_axis": "身高 (cm)",
+        "current_height": "当前身高",
+        "predicted_trajectory": "预测轨迹",
+        "predicted_height": "预测身高",
+        "predicted_adult_height": "预测成年身高",
+        "current_age_label": "当前年龄",
+        "who_standard_curves": "WHO标准曲线",
+        "chart_description_title": "图表说明",
+        "chart_description_content": "灰色曲线代表WHO标准身高范围（10%-90%），蓝点为当前身高位置，黄色虚线显示预测的成长轨迹，红点为预测的成年身高。",
+        "percentile_3": "第3百分位",
+        "percentile_10": "第10百分位",
+        "percentile_25": "第25百分位",
+        "percentile_50": "第50百分位",
+        "percentile_75": "第75百分位",
+        "percentile_90": "第90百分位",
+        "percentile_97": "第97百分位"
+      },
+      "recommendations": {
+        "title": "个性化成长建议",
+        "nutrition": {
+          "title": "营养建议",
+          "content": "确保均衡饮食，多摄入优质蛋白质、钙质和维生素D。建议每天喝奶制品，多吃鱼类、蛋类和绿叶蔬菜。"
+        },
+        "exercise": {
+          "title": "运动建议",
+          "content": "进行有助于身高发育的运动，如篮球、游泳、跳绳等。建议每天至少1小时的户外活动时间。"
+        },
+        "sleep": {
+          "title": "睡眠建议",
+          "content": "保证充足的睡眠时间，生长激素主要在深度睡眠时分泌。学龄儿童建议每天9-11小时睡眠。"
+        },
+        "lifestyle": {
+          "title": "生活方式",
+          "content": "维持健康的生活习惯，避免挑食偏食，减少久坐时间，保持良好的心理状态。"
+        }
+      },
+      "basic_info": {
+        "age": "年龄",
+        "years": "岁",
+        "boy": "男孩",
+        "girl": "女孩"
+      },
+      "growth_analysis": {
+        "title": "成长分析",
+        "current_age": "当前年龄",
+        "years": "岁",
+        "predicted_growth": "预测增长"
+      },
+      "download": {
+        "title": "获取详细报告",
+        "description": "下载包含完整分析结果和建议的PDF报告",
+        "generating": "生成中..."
+      },
+      "download_pdf": "下载完整报告 (PDF)",
+      "pdf_note": "注意：PDF报告为英文版本，以确保最佳显示效果。",
+      "disclaimer": {
+        "title": "免责声明",
+        "content": "本预测结果仅供参考，实际身高受遗传、营养、疾病等多种因素影响。如有健康疑问，请咨询专业医生。"
+      }
+    }
   }
 }

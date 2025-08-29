@@ -112,5 +112,150 @@
       "pending": "Pending",
       "completed": "Completed"
     }
+  },
+  "function": {
+    "title": "Child Height Prediction & Growth Report",
+    "subtitle": "Enter child information to get professional future height prediction, growth curve analysis and personalized recommendations.",
+    "form": {
+      "title": "Enter Child Information",
+      "progress": "Form Completion",
+      "unit_label": "Measurement Unit",
+      "metric": "Metric (cm/kg)",
+      "imperial": "Imperial (in/lbs)",
+      "child_info": "Child Basic Information",
+      "gender": "Gender",
+      "gender_placeholder": "Select Gender",
+      "gender_male": "Boy",
+      "gender_female": "Girl",
+      "birth_date": "Birth Date",
+      "birth_date_placeholder": "Year/Month/Day",
+      "current_height": "Current Height",
+      "current_height_placeholder": "Enter height (cm)",
+      "current_weight": "Current Weight",
+      "current_weight_placeholder": "Enter weight (kg)",
+      "parent_info": "Parental Height Information",
+      "father_height": "Father's Height",
+      "father_height_placeholder": "Enter father's height (cm)",
+      "mother_height": "Mother's Height",
+      "mother_height_placeholder": "Enter mother's height (cm)",
+      "calculate_button": "Start Prediction",
+      "calculating": "Calculating...",
+      "reset_button": "Reset",
+      "privacy_note": "* Required fields. All information is processed locally to ensure privacy.",
+      "errors": {
+        "gender_required": "Please select gender",
+        "birth_date_required": "Please select birth date",
+        "height_required": "Please enter current height",
+        "weight_required": "Please enter current weight",
+        "father_height_required": "Please enter father's height",
+        "mother_height_required": "Please enter mother's height",
+        "height_invalid": "Height must be between 40-250cm",
+        "weight_invalid": "Weight must be between 2-200kg",
+        "birth_date_invalid": "Birth date cannot be in the future",
+        "age_invalid": "Age must be between 2-18 years"
+      }
+    },
+    "results": {
+      "title": "Prediction Results & Report",
+      "waiting_message": "Please fill in the information on the left to get prediction results.",
+      "tabs": {
+        "prediction": "Height Prediction",
+        "growth_chart": "Growth Chart",
+        "analysis": "Detailed Analysis",
+        "health": "Health Status",
+        "recommendations": "Growth Recommendations"
+      },
+      "prediction": {
+        "primary_title": "Predicted Adult Height",
+        "range_title": "Prediction Range",
+        "confidence_title": "Prediction Confidence",
+        "percentile_title": "Current Height Percentile",
+        "percentile_desc": "Height ranking among children of the same age",
+        "expected_growth": "Expected Growth",
+        "cm_unit": "centimeters",
+        "confidence_unit": "%"
+      },
+      "bmi": {
+        "title": "BMI Analysis",
+        "current_bmi": "Current BMI",
+        "category": "Weight Status",
+        "recommendation": "Recommendation",
+        "categories": {
+          "underweight": "Underweight",
+          "normal": "Normal",
+          "overweight": "Overweight",
+          "obese": "Obese"
+        }
+      },
+      "algorithms": {
+        "title": "Prediction Algorithm Comparison",
+        "name": "Algorithm Name",
+        "predicted_height": "Predicted Height",
+        "confidence": "Confidence",
+        "description": "Algorithm Description"
+      },
+      "growth_chart": {
+        "title": "WHO Standard Growth Chart",
+        "age_axis": "Age (years)",
+        "height_axis": "Height (cm)",
+        "current_height": "Current Height",
+        "predicted_trajectory": "Predicted Trajectory",
+        "predicted_height": "Predicted Height",
+        "predicted_adult_height": "Predicted Adult Height",
+        "current_age_label": "Current Age",
+        "who_standard_curves": "WHO Standard Curves",
+        "chart_description_title": "Chart Description",
+        "chart_description_content": "Gray curves represent WHO standard height ranges (10%-90%), blue dot shows current height position, yellow dashed line shows predicted growth trajectory, red dot shows predicted adult height.",
+        "percentile_3": "3rd Percentile",
+        "percentile_10": "10th Percentile",
+        "percentile_25": "25th Percentile",
+        "percentile_50": "50th Percentile",
+        "percentile_75": "75th Percentile",
+        "percentile_90": "90th Percentile",
+        "percentile_97": "97th Percentile"
+      },
+      "recommendations": {
+        "title": "Personalized Growth Recommendations",
+        "nutrition": {
+          "title": "Nutrition Recommendations",
+          "content": "Ensure a balanced diet with adequate protein, calcium, and vitamin D. Recommend daily dairy products, fish, eggs, and leafy vegetables."
+        },
+        "exercise": {
+          "title": "Exercise Recommendations",
+          "content": "Engage in height-promoting activities like basketball, swimming, jumping rope. Recommend at least 1 hour of outdoor activity daily."
+        },
+        "sleep": {
+          "title": "Sleep Recommendations",
+          "content": "Ensure adequate sleep as growth hormone is primarily secreted during deep sleep. School-age children need 9-11 hours of sleep daily."
+        },
+        "lifestyle": {
+          "title": "Lifestyle",
+          "content": "Maintain healthy lifestyle habits, avoid picky eating, reduce sedentary time, and maintain good mental health."
+        }
+      },
+      "basic_info": {
+        "age": "Age",
+        "years": "years",
+        "boy": "Boy",
+        "girl": "Girl"
+      },
+      "growth_analysis": {
+        "title": "Growth Analysis",
+        "current_age": "Current age",
+        "years": "years",
+        "predicted_growth": "Predicted growth"
+      },
+      "download": {
+        "title": "Download Report",
+        "description": "Download a complete PDF report with analysis and recommendations",
+        "generating": "Generating..."
+      },
+      "download_pdf": "Download Complete Report (PDF)",
+      "pdf_note": "Note: PDF report is in English to ensure optimal display quality.",
+      "disclaimer": {
+        "title": "Disclaimer",
+        "content": "This prediction is for reference only. Actual height is influenced by genetics, nutrition, diseases and other factors. Consult a professional doctor for health concerns."
+      }
+    }
   }
 }

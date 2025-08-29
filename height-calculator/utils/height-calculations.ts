@@ -7,6 +7,77 @@ import type {
   GrowthStandard 
 } from '@/types/height.types';
 
+/**
+ * 翻译算法名称和描述的辅助函数
+ * 这些翻译将在前端通过国际化系统覆盖
+ */
+export function translateAlgorithmInfo(name: string, description: string, locale?: string) {
+  // 算法名称翻译
+  const nameTranslations: { [key: string]: { en: string; zh: string } } = {
+    'Khamis-Roche 改良法': {
+      en: 'Modified Khamis-Roche Method',
+      zh: 'Khamis-Roche 改良法'
+    },
+    '中位父母身高法': {
+      en: 'Mid-Parental Height Method',
+      zh: '中位父母身高法'
+    },
+    '百分位追踪法': {
+      en: 'Percentile Tracking Method',
+      zh: '百分位追踪法'
+    }
+  };
+
+  // 描述翻译
+  const descriptionTranslations: { [key: string]: { en: string; zh: string } } = {
+    '基于父母身高、当前身高和年龄的综合预测模型，适用于2-18岁儿童。': {
+      en: 'Comprehensive prediction model based on parental height, current height, and age, suitable for children aged 2-18.',
+      zh: '基于父母身高、当前身高和年龄的综合预测模型，适用于2-18岁儿童。'
+    },
+    '基于父母身高的简化预测方法，遗传因素占主导。': {
+      en: 'Simplified prediction method based on parental height, with genetic factors being dominant.',
+      zh: '基于父母身高的简化预测方法，遗传因素占主导。'
+    },
+    '假设儿童保持当前身高百分位直至成年的预测方法。': {
+      en: 'Prediction method assuming children maintain their current height percentile until adulthood.',
+      zh: '假设儿童保持当前身高百分位直至成年的预测方法。'
+    }
+  };
+
+  const targetLocale = locale || 'zh';
+  const translatedName = nameTranslations[name]?.[targetLocale as 'en' | 'zh'] || name;
+  const translatedDescription = descriptionTranslations[description]?.[targetLocale as 'en' | 'zh'] || description;
+
+  return { name: translatedName, description: translatedDescription };
+}
+
+/**
+ * 翻译BMI建议的辅助函数
+ */
+export function translateBMIRecommendation(recommendation: string, locale?: string) {
+  const translations: { [key: string]: { en: string; zh: string } } = {
+    '体重偏轻，建议增加营养摄入，咨询儿科医生。': {
+      en: 'Underweight, recommend increasing nutritional intake and consulting a pediatrician.',
+      zh: '体重偏轻，建议增加营养摄入，咨询儿科医生。'
+    },
+    '体重正常，保持均衡饮食和适量运动。': {
+      en: 'Normal weight, maintain balanced diet and moderate exercise.',
+      zh: '体重正常，保持均衡饮食和适量运动。'
+    },
+    '体重偏重，建议控制饮食，增加体育锻炼。': {
+      en: 'Overweight, recommend controlling diet and increasing physical exercise.',
+      zh: '体重偏重，建议控制饮食，增加体育锻炼。'
+    },
+    '体重过重，建议咨询医生制定健康的减重计划。': {
+      en: 'Obese, recommend consulting a doctor to develop a healthy weight loss plan.',
+      zh: '体重过重，建议咨询医生制定健康的减重计划。'
+    }
+  };
+
+  const targetLocale = locale || 'zh';
+  return translations[recommendation]?.[targetLocale as 'en' | 'zh'] || recommendation;
+}
+
 // WHO 标准身高数据 (简化版本，实际应用中需要完整数据)
 const WHO_HEIGHT_STANDARDS: GrowthStandard[] = [
   // 0-18岁的标准身高数据 (按月龄)
@@ -58,6 +129,25 @@ export function convertHeight(height: number, from: 'metric' | 'imperial', to: '
   }
   
   return height;
+}
+
+/**
+ * 体重单位转换函数
+ * @param weight 体重数值
+ * @param from 源单位
+ * @param to 目标单位
+ * @returns 转换后的体重数值，保留一位小数
+ */
+export function convertWeight(weight: number, from: 'metric' | 'imperial', to: 'metric' | 'imperial'): number {
+  if (from === to) return weight;
+  
+  if (from === 'imperial' && to === 'metric') {
+    return Math.round((weight / 2.20462) * 10) / 10; // lbs to kg
+  } else if (from === 'metric' && to === 'imperial') {
+    return Math.round((weight * 2.20462) * 10) / 10; // kg to lbs
+  }
+  
+  return weight;
 }
 
 /**

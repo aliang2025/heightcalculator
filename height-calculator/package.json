@@ -1,14 +1,9 @@
 {
-"scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start"
-},
-"dependencies": {
-  "next": "15.2.3",
-  "react": "18.x",
-  "react-dom": "18.x"
-}
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
     "@ai-sdk/deepseek": "^0.1.11",
     "@ai-sdk/openai": "^1.1.13",

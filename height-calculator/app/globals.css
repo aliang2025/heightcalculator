@@ -8,6 +8,34 @@ html {
   scroll-behavior: smooth;
 }
 
+/* 移动端优化 */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* 确保输入框在移动端易于操作 */
+  input, select, textarea {
+    font-size: 16px !important; /* 防止iOS缩放 */
+  }
+  
+  /* 优化触摸目标大小 */
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* 防止水平滚动 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 @layer base {
   * {
     @apply border-border;

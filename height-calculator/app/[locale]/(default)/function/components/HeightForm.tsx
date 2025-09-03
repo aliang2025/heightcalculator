@@ -177,50 +177,50 @@ export default function HeightForm({ onCalculate, isCalculating, onReset }: Heig
   const weightUnit = isMetric ? 'kg' : 'lbs';
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 lg:space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 lg:space-y-8">
       {/* 进度指示器 */}
-      <div className="mb-6 lg:mb-8">
-        <div className="flex justify-between items-center mb-3">
-          <span className="text-sm lg:text-base font-medium text-gray-700">{t('progress')}</span>
-          <Badge variant={completeness === 100 ? "default" : "secondary"} className="text-sm px-3 py-1">
+      <div className="mb-4 sm:mb-6 lg:mb-8">
+        <div className="flex justify-between items-center mb-2 sm:mb-3">
+          <span className="text-xs sm:text-sm lg:text-base font-medium text-gray-700">{t('progress')}</span>
+          <Badge variant={completeness === 100 ? "default" : "secondary"} className="text-xs sm:text-sm px-2 sm:px-3 py-1">
             {completeness}%
           </Badge>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-3">
+        <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
           <div 
-            className="bg-gradient-to-r from-orange-400 to-orange-600 h-3 rounded-full transition-all duration-500 shadow-sm"
+            className="bg-gradient-to-r from-orange-400 to-orange-600 h-2 sm:h-3 rounded-full transition-all duration-500 shadow-sm"
             style={{ width: `${completeness}%` }}
           ></div>
         </div>
       </div>
 
       {/* 单位切换 */}
-      <Card className="p-4 lg:p-6 bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200">
-        <div className="flex items-center justify-between">
-          <Label className="text-sm lg:text-base font-medium text-gray-700">{t('unit_label')}</Label>
-          <div className="flex items-center space-x-3">
-            <span className={`text-sm lg:text-base ${isMetric ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>{t('metric')}</span>
+      <Card className="p-3 sm:p-4 lg:p-6 bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
+          <Label className="text-xs sm:text-sm lg:text-base font-medium text-gray-700">{t('unit_label')}</Label>
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <span className={`text-xs sm:text-sm lg:text-base ${isMetric ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>{t('metric')}</span>
             <Switch
               checked={!isMetric}
               onCheckedChange={toggleUnit}
             />
-            <span className={`text-sm lg:text-base ${!isMetric ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>{t('imperial')}</span>
+            <span className={`text-xs sm:text-sm lg:text-base ${!isMetric ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>{t('imperial')}</span>
           </div>
         </div>
       </Card>
 
       {/* 基本信息 */}
-      <div className="space-y-4 lg:space-y-6">
-        <h3 className="font-semibold text-gray-900 text-lg lg:text-xl">👶 {t('child_info')}</h3>
+      <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+        <h3 className="font-semibold text-gray-900 text-base sm:text-lg lg:text-xl">👶 {t('child_info')}</h3>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6">
           <div>
-            <Label htmlFor="gender">{t('gender')} *</Label>
+            <Label htmlFor="gender" className="text-sm sm:text-base font-medium text-gray-700">{t('gender')} *</Label>
             <Select 
               value={formData.gender || ''} 
               onValueChange={(value: Gender) => setFormData({...formData, gender: value})}
             >
-              <SelectTrigger className={errors.gender ? 'border-red-500' : ''}>
+              <SelectTrigger className={`mt-1 h-11 sm:h-12 text-sm sm:text-base ${errors.gender ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}>
                 <SelectValue placeholder={t('gender_placeholder')} />
               </SelectTrigger>
               <SelectContent>
@@ -232,43 +232,43 @@ export default function HeightForm({ onCalculate, isCalculating, onReset }: Heig
           </div>
 
           <div>
-            <Label htmlFor="birthDate">{t('birth_date')} *</Label>
+            <Label htmlFor="birthDate" className="text-sm sm:text-base font-medium text-gray-700">{t('birth_date')} *</Label>
             <Input
               type="date"
               id="birthDate"
               value={formData.birthDate ? formData.birthDate.toISOString().split('T')[0] : ''}
               onChange={(e) => setFormData({...formData, birthDate: new Date(e.target.value)})}
-              className={errors.birthDate ? 'border-red-500' : ''}
+              className={`mt-1 h-11 sm:h-12 text-sm sm:text-base ${errors.birthDate ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
               max={new Date().toISOString().split('T')[0]}
             />
             {errors.birthDate && <p className="text-red-500 text-xs mt-1">{errors.birthDate}</p>}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6">
           <div>
-            <Label htmlFor="currentHeight" className="text-sm lg:text-base font-medium text-gray-700">{t('current_height')} * ({heightUnit})</Label>
+            <Label htmlFor="currentHeight" className="text-sm sm:text-base font-medium text-gray-700">{t('current_height')} * ({heightUnit})</Label>
             <Input
               type="number"
               id="currentHeight"
               placeholder={t('current_height_placeholder').replace('(cm)', `(${heightUnit})`)}
               value={formData.currentHeight || ''}
               onChange={(e) => setFormData({...formData, currentHeight: parseFloat(e.target.value) || undefined})}
-              className={`mt-2 h-12 text-base ${errors.currentHeight ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
+              className={`mt-1 h-11 sm:h-12 text-sm sm:text-base ${errors.currentHeight ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
               step="0.1"
             />
             {errors.currentHeight && <p className="text-red-500 text-xs mt-1">{errors.currentHeight}</p>}
           </div>
 
           <div>
-            <Label htmlFor="currentWeight" className="text-sm lg:text-base font-medium text-gray-700">{t('current_weight')} * ({weightUnit})</Label>
+            <Label htmlFor="currentWeight" className="text-sm sm:text-base font-medium text-gray-700">{t('current_weight')} * ({weightUnit})</Label>
             <Input
               type="number"
               id="currentWeight"
               placeholder={t('current_weight_placeholder').replace('(kg)', `(${weightUnit})`)}
               value={formData.currentWeight || ''}
               onChange={(e) => setFormData({...formData, currentWeight: parseFloat(e.target.value) || undefined})}
-              className={`mt-2 h-12 text-base ${errors.currentWeight ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
+              className={`mt-1 h-11 sm:h-12 text-sm sm:text-base ${errors.currentWeight ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
               step="0.1"
             />
             {errors.currentWeight && <p className="text-red-500 text-xs mt-1">{errors.currentWeight}</p>}
@@ -279,33 +279,33 @@ export default function HeightForm({ onCalculate, isCalculating, onReset }: Heig
       <Separator />
 
       {/* 父母信息 */}
-      <div className="space-y-4 lg:space-y-6">
-        <h3 className="font-semibold text-gray-900 text-lg lg:text-xl">👨‍👩‍👧‍👦 {t('parent_info')}</h3>
+      <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+        <h3 className="font-semibold text-gray-900 text-base sm:text-lg lg:text-xl">👨‍👩‍👧‍👦 {t('parent_info')}</h3>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6">
           <div>
-            <Label htmlFor="fatherHeight" className="text-sm lg:text-base font-medium text-gray-700">{t('father_height')} * ({heightUnit})</Label>
+            <Label htmlFor="fatherHeight" className="text-sm sm:text-base font-medium text-gray-700">{t('father_height')} * ({heightUnit})</Label>
             <Input
               type="number"
               id="fatherHeight"
               placeholder={t('father_height_placeholder').replace('(cm)', `(${heightUnit})`)}
               value={formData.fatherHeight || ''}
               onChange={(e) => setFormData({...formData, fatherHeight: parseFloat(e.target.value) || undefined})}
-              className={`mt-2 h-12 text-base ${errors.fatherHeight ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
+              className={`mt-1 h-11 sm:h-12 text-sm sm:text-base ${errors.fatherHeight ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
               step="0.1"
             />
             {errors.fatherHeight && <p className="text-red-500 text-xs mt-1">{errors.fatherHeight}</p>}
           </div>
 
           <div>
-            <Label htmlFor="motherHeight" className="text-sm lg:text-base font-medium text-gray-700">{t('mother_height')} * ({heightUnit})</Label>
+            <Label htmlFor="motherHeight" className="text-sm sm:text-base font-medium text-gray-700">{t('mother_height')} * ({heightUnit})</Label>
             <Input
               type="number"
               id="motherHeight"
               placeholder={t('mother_height_placeholder').replace('(cm)', `(${heightUnit})`)}
               value={formData.motherHeight || ''}
               onChange={(e) => setFormData({...formData, motherHeight: parseFloat(e.target.value) || undefined})}
-              className={`mt-2 h-12 text-base ${errors.motherHeight ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
+              className={`mt-1 h-11 sm:h-12 text-sm sm:text-base ${errors.motherHeight ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`}
               step="0.1"
             />
             {errors.motherHeight && <p className="text-red-500 text-xs mt-1">{errors.motherHeight}</p>}
@@ -314,20 +314,20 @@ export default function HeightForm({ onCalculate, isCalculating, onReset }: Heig
       </div>
 
       {/* 提交按钮 */}
-      <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 pt-6 lg:pt-8">
+      <div className="flex flex-col gap-3 sm:gap-4 pt-4 sm:pt-6 lg:pt-8">
         <Button 
           type="submit" 
           disabled={isCalculating || completeness < 100}
-          className="flex-1 h-12 lg:h-14 text-base lg:text-lg font-semibold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transition-all duration-200"
+          className="w-full h-11 sm:h-12 lg:h-14 text-sm sm:text-base lg:text-lg font-semibold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transition-all duration-200"
         >
           {isCalculating ? (
             <>
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-              {t('calculating')}
+              <div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-b-2 border-white mr-2 sm:mr-3"></div>
+              <span className="text-sm sm:text-base">{t('calculating')}</span>
             </>
           ) : (
             <>
-              🧮 {t('calculate_button')}
+              <span className="text-sm sm:text-base">🧮 {t('calculate_button')}</span>
             </>
           )}
         </Button>
@@ -337,13 +337,13 @@ export default function HeightForm({ onCalculate, isCalculating, onReset }: Heig
           variant="outline" 
           onClick={handleReset}
           disabled={isCalculating}
-          className="sm:flex-none px-6 lg:px-8 h-12 lg:h-14 text-base lg:text-lg border-gray-300 hover:border-orange-500 hover:text-orange-600"
+          className="w-full h-10 sm:h-11 lg:h-12 text-sm sm:text-base lg:text-lg border-gray-300 hover:border-orange-500 hover:text-orange-600"
         >
           {t('reset_button')}
         </Button>
       </div>
 
-      <p className="text-xs lg:text-sm text-gray-500 text-center bg-gray-50 p-3 lg:p-4 rounded-lg border border-gray-200">
+      <p className="text-xs sm:text-sm text-gray-500 text-center bg-gray-50 p-3 sm:p-4 rounded-lg border border-gray-200 leading-relaxed">
         {t('privacy_note')}
       </p>
     </form>

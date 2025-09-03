@@ -1,4 +1,7 @@
 {
+  "name": "height-calculator",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -98,7 +101,7 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
-    "vercel": "^39.2.0",
+    "vercel": "^39.4.2",
     "wrangler": "^3.96.0"
   }
 }

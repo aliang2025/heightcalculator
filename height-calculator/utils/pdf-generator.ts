@@ -1,6 +1,6 @@
 import jsPDF from 'jspdf';
 import { HeightCalculatorData, PredictionResult } from '@/types/height.types';
-import { calculateAgeInYears, translateAlgorithmInfo, translateBMIRecommendation } from './height-calculations';
+import { calculateAgeInYears, translateAlgorithmInfo } from './height-calculations';
 
 // PDF文本翻译映射
 const pdfTexts = {

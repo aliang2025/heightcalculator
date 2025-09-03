@@ -39,9 +39,19 @@ export default function HeightForm({ onCalculate, isCalculating, onReset }: Heig
     const requiredFields = ['gender', 'birthDate', 'currentHeight', 'currentWeight', 'fatherHeight', 'motherHeight'];
     const completedFields = requiredFields.filter(field => {
       const value = formData[field as keyof HeightCalculatorData];
-      if (typeof value === 'string') {
-        return value !== undefined && value !== null && value !== '';
+      
+      // 处理不同的字段类型
+      if (field === 'gender') {
+        return value !== undefined && value !== null;
       }
+      if (field === 'birthDate') {
+        return value !== undefined && value !== null;
+      }
+      if (field === 'currentHeight' || field === 'currentWeight' || field === 'fatherHeight' || field === 'motherHeight') {
+        return value !== undefined && value !== null && typeof value === 'number' && value > 0;
+      }
+      
+      // 对于其他情况
       return value !== undefined && value !== null;
     });
     

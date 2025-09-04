@@ -2,7 +2,6 @@ import type { ImageModelV1, ImageModelV1CallWarning } from "@ai-sdk/provider";
 import { KlingImageModelId, KlingImageSettings } from "./kling-image-settings";
 
 import { FetchFunction } from "@ai-sdk/provider-utils";
-import type { Resolvable } from "@ai-sdk/provider-utils";
 import { newClient } from "./image-generation";
 
 interface KlingImageModelConfig {
@@ -10,7 +9,7 @@ interface KlingImageModelConfig {
   secretKey: string;
   provider: string;
   baseURL: string;
-  headers: Resolvable<Record<string, string | undefined>>;
+  headers: Record<string, string | undefined>;
   fetch?: FetchFunction;
 }
 

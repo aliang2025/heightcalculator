@@ -31,16 +31,16 @@ const nextConfig = {
     return [];
   },
   // Vercel 优化配置
-  swcMinify: true,
   poweredByHeader: false,
   compress: true,
+  serverExternalPackages: ['@aws-sdk/client-s3', '@aws-sdk/lib-storage'],
 };
 
 // Make sure experimental mdx flag is enabled
 const configWithMDX = {
   ...nextConfig,
   experimental: {
-    mdxRs: true,
+    mdxRs: false, // 使用稳定的MDX配置
   },
 };
 

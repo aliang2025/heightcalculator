@@ -2,7 +2,6 @@ import { KlingVideoModelId, KlingVideoSettings } from "./kling-video-settings";
 import type { VideoModelV1, VideoModelV1CallWarning } from "@/aisdk/provider";
 
 import { FetchFunction } from "@ai-sdk/provider-utils";
-import type { Resolvable } from "@ai-sdk/provider-utils";
 import { newClient } from "./text2video";
 
 interface KlingVideoModelConfig {
@@ -10,7 +9,7 @@ interface KlingVideoModelConfig {
   secretKey: string;
   provider: string;
   baseURL: string;
-  headers: Resolvable<Record<string, string | undefined>>;
+  headers: Record<string, string | undefined>;
   fetch?: FetchFunction;
 }
 

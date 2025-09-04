@@ -4,6 +4,12 @@
       "maxDuration": 60
     }
   },
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install --legacy-peer-deps",
+  "regions": ["iad1"],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
 

@@ -467,8 +467,8 @@ chore: 构建过程或辅助工具的变动
 
 ## 🙋‍♂️ 支持与联系
 
-- **项目主页**：[ShipAny](https://shipany.ai)
-- **技术文档**：[Documentation](https://docs.shipany.ai)
+- **项目主页**：[Height Calculator](https://heightcalculator.com)
+- **技术文档**：[Documentation](https://docs.heightcalculator.com)
 - **社区讨论**：[Discord](https://discord.gg/HQNnrzjZQS)
 - **问题反馈**：[GitHub Issues](https://github.com/your-repo/issues)
 

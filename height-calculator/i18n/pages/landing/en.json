@@ -1,78 +1,534 @@
 {
+  "template": "shipany-template-one",
+  "theme": "light",
   "header": {
-    "brand": { "title": "Height Calculator", "logo": { "src": "/logo.png", "alt": "Height Calculator" }, "url": "/" },
+    "brand": {
+      "title": "Height Calculator",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Height Calculator"
+      },
+      "url": "/"
+    },
     "nav": {
       "items": [
-        { "title": "Calculators", "url": "/#feature", "icon": "HiOutlineSparkles" },
-        { "title": "Growth Charts", "url": "/#usage", "icon": "RiBarChart2Line" },
-        { "title": "FAQ", "url": "/#faq", "icon": "BiHelpCircle" }
+        {
+          "title": "Calculators",
+          "url": "/#feature",
+          "icon": "HiOutlineSparkles"
+        },
+        {
+          "title": "Growth Charts",
+          "url": "/#usage",
+          "icon": "MdPayment"
+        },
+        {
+          "title": "FAQ",
+          "url": "/#faq",
+          "icon": "BiCube",
+          "children": [
+            {
+              "title": "CM ↔ FT/IN",
+              "description": "Height calculator conversion tool",
+              "icon": "MdOutlineWallpaper",
+              "url": "/#feature",
+              "target": "_self"
+            },
+            {
+              "title": "Child Height Predictor",
+              "description": "Estimate adult height with height calculator",
+              "icon": "",
+              "url": "/#feature",
+              "target": "_self"
+            }
+          ]
+        }
       ]
     },
     "buttons": [
-      { "title": "Start Now", "url": "/#feature", "target": "_self", "variant": "link", "icon": "RiArrowRightUpLine" }
+      {
+        "title": "Start Now",
+        "url": "/#feature",
+        "target": "_self",
+        "variant": "link",
+        "icon": "RiArrowRightUpLine"
+      }
     ],
-    "show_sign": false, "show_theme": true, "show_locale": true
+    "show_sign": false,
+    "show_theme": true,
+    "show_locale": true
   },
   "hero": {
-    "title": "Accurate and Fast Height Calculator",
-    "highlight_text": "Height",
-    "description": "Free online height tools: cm↔ft/in converter, child height predictor, percentile and growth charts.",
-    "announcement": { "label": "Tools", "title": "New: Child Height Predictor", "url": "/#feature" },
-    "tip": "100% free • No signup • Instant results",
+    "title": "Accurate, Fast & Free Height Calculator",
+    "highlight_text": "Height Calculator",
+    "description": "Use the height calculator for cm to ft/in conversion, child height prediction, height percentile lookup, and growth chart visualization. The height calculator is designed for families, coaches, students, and enthusiasts, offering simple operation, clear results, no login required, and instant privacy-friendly calculations.",
+    "announcement": {
+      "label": "Tools",
+      "title": "New: Child Height Predictor now in Height Calculator",
+      "url": "/#feature"
+    },
+    "tip": "100% free • No signup • Instant results • Privacy first",
     "buttons": [
-      { "title": "Calculate Now", "icon": "RiFlashlightFill", "url": "/function", "target": "_self", "variant": "default" }
+      {
+        "title": "Calculate Now",
+        "icon": "RiFlashlightFill",
+        "url": "/function",
+        "target": "_self",
+        "variant": "default"
+      }
     ],
-    "show_happy_users": false, "show_badge": false
+    "show_happy_users": true,
+    "show_badge": false
+  },
+  "branding": {
+    "title": "Built on Modern Web Standards",
+    "items": [
+      {
+        "title": "Next.js",
+        "image": {
+          "src": "/imgs/logos/nextjs.svg",
+          "alt": "Next.js"
+        }
+      },
+      {
+        "title": "React",
+        "image": {
+          "src": "/imgs/logos/react.svg",
+          "alt": "React"
+        }
+      },
+      {
+        "title": "TailwindCSS",
+        "image": {
+          "src": "/imgs/logos/tailwindcss.svg",
+          "alt": "TailwindCSS"
+        }
+      },
+      {
+        "title": "Shadcn/UI",
+        "image": {
+          "src": "/imgs/logos/shadcn.svg",
+          "alt": "Shadcn/UI"
+        }
+      },
+      {
+        "title": "Vercel",
+        "image": {
+          "src": "/imgs/logos/vercel.svg",
+          "alt": "Vercel"
+        }
+      }
+    ]
+  },
+  "introduce": {
+    "name": "introduce",
+    "title": "What is Height Calculator",
+    "label": "Introduction",
+    "description": "Height Calculator is a free, easy-to-use online height tool focused on speed, accuracy, and readability. Whether it's cm to ft/in conversion, child height prediction, height percentile lookup, or growth charts, the Height Calculator can instantly complete calculations and displays in your browser. The Height Calculator prioritizes privacy, doesn't collect personal information, helping families, coaches, and students intuitively understand height, growth, and percentile concepts for clearer decision-making.",
+    "image": {
+      "src": "/imgs/features/1.png"
+    },
+    "items": [
+      {
+        "title": "Ready-to-Use Conversion",
+        "description": "Use the Height Calculator for real-time bidirectional conversion between centimeters and feet/inches, supporting decimal feet and feet+inches display.",
+        "icon": "RiNextjsFill"
+      },
+      {
+        "title": "Reference-Based Prediction",
+        "description": "The Height Calculator provides adult height estimation based on parental height and common growth references, suitable for boys and girls.",
+        "icon": "RiDatabase2Line"
+      },
+      {
+        "title": "Percentiles & Charts",
+        "description": "In the Height Calculator, query height percentiles by age and gender, and track trends with charts.",
+        "icon": "RiCloudyFill"
+      }
+    ]
+  },
+  "benefit": {
+    "name": "benefit",
+    "title": "Why Choose This Height Calculator",
+    "label": "Benefits",
+    "description": "Use one Height Calculator to solve multiple needs: conversion, prediction, percentiles, growth charts, and comparison. The Height Calculator emphasizes 'accuracy, clarity, privacy' to provide reliable support for families, coaches, learning, and research.",
+    "items": [
+      {
+        "title": "Accurate & Clear",
+        "description": "The Height Calculator outputs instant, readable, unit-clear results with necessary explanations and tips.",
+        "icon": "RiNextjsFill",
+        "image": {
+          "src": "/imgs/features/2.png"
+        }
+      },
+      {
+        "title": "All-in-One Toolbox",
+        "description": "One Height Calculator can complete conversion, child height prediction, percentile lookup, and trend visualization, reducing multi-site switching.",
+        "icon": "RiClapperboardAiLine",
+        "image": {
+          "src": "/imgs/features/3.png"
+        }
+      },
+      {
+        "title": "Privacy First",
+        "description": "The Height Calculator runs locally, requires no login or data upload, and stores no personal information.",
+        "icon": "RiCodeFill",
+        "image": {
+          "src": "/imgs/features/4.png"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "name": "usage",
+    "title": "How to Use Height Calculator",
+    "description": "Follow these steps to quickly get clear results in the Height Calculator.",
+    "image": {
+      "src": "/imgs/features/1.png"
+    },
+    "image_position": "left",
+    "text_align": "center",
+    "items": [
+      {
+        "title": "Open Height Calculator",
+        "description": "In the Height Calculator, select the tool you need: CM ↔ FT/IN, Child Height Predictor, or Height Percentile.",
+        "image": {
+          "src": "/imgs/features/5.png"
+        }
+      },
+      {
+        "title": "Enter Data",
+        "description": "Enter height, age, gender, and parental height information as needed. The Height Calculator will update results instantly.",
+        "image": {
+          "src": "/imgs/features/6.png"
+        }
+      },
+      {
+        "title": "View Results",
+        "description": "In the Height Calculator, view conversion results, adult height estimates, and age-corresponding height percentiles.",
+        "image": {
+          "src": "/imgs/features/7.png"
+        }
+      },
+      {
+        "title": "Explore Growth Curves",
+        "description": "Use the Height Calculator to visualize growth trends and compare with common references.",
+        "image": {
+          "src": "/imgs/features/8.png"
+        }
+      }
+    ]
   },
   "feature": {
     "name": "feature",
-    "title": "All-in-One Height Tools",
-    "description": "Everything you need for accurate height calculations and insights.",
+    "title": "Height Calculator's All-in-One Tools",
+    "description": "Complete accurate height calculations and insights in the same Height Calculator.",
     "items": [
-      { "title": "CM ↔ FT/IN Converter", "description": "Instantly convert between centimeters and feet/inches.", "icon": "RiExchangeFill" },
-      { "title": "Child Height Predictor", "description": "Estimate adult height using mid-parental height and growth factors.", "icon": "RiBarChart2Line" },
-      { "title": "Height Percentile", "description": "Check percentile by age and sex using standard growth references.", "icon": "RiPercentFill" },
-      { "title": "Growth Charts", "description": "Visualize growth trends over time.", "icon": "RiLineChartFill" },
-      { "title": "Height Comparison", "description": "Compare heights across people or sports positions.", "icon": "RiUserFollowFill" },
-      { "title": "Privacy First", "description": "No sign-up required. No data stored.", "icon": "RiShieldCheckFill" }
+      {
+        "title": "CM ↔ FT/IN Converter",
+        "description": "Use the Height Calculator for quick bidirectional conversion between centimeters and feet/inches, supporting multiple display formats.",
+        "icon": "RiNextjsFill"
+      },
+      {
+        "title": "Child Height Predictor",
+        "description": "In the Height Calculator, estimate adult height based on parental height and age for family reference and planning.",
+        "icon": "RiKey2Fill"
+      },
+      {
+        "title": "Height Percentile",
+        "description": "Use the Height Calculator to view height percentiles by age and gender, intuitively understand relative position.",
+        "icon": "RiDatabase2Line"
+      },
+      {
+        "title": "Growth Charts",
+        "description": "In the Height Calculator, visualize growth trends and compare with common references.",
+        "icon": "RiCloudy2Fill"
+      },
+      {
+        "title": "Height Comparison",
+        "description": "Use the Height Calculator for height comparison between individuals or groups, supporting training and learning scenarios.",
+        "icon": "RiBarChart2Line"
+      },
+      {
+        "title": "Privacy & Speed",
+        "description": "The Height Calculator requires no account or storage, focusing on fast, clear instant results.",
+        "icon": "RiRobot2Line"
+      }
+    ]
+  },
+  "showcase": {
+    "name": "showcase",
+    "title": "Common Use Cases for Height Calculator",
+    "description": "In real situations, the Height Calculator saves time and provides clear answers.",
+    "items": [
+      {
+        "title": "Family Reference",
+        "description": "Use the Height Calculator to predict children's adult height, combined with growth curves for more confident tracking of changes.",
+        "url": "/#feature",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/7.png"
+        }
+      },
+      {
+        "title": "Sports & Training",
+        "description": "Coaches use the Height Calculator for height comparison and percentile reference to assist training decisions.",
+        "url": "/#feature",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/5.png"
+        }
+      },
+      {
+        "title": "Classroom Teaching",
+        "description": "In the classroom, use the Height Calculator to explain unit conversion and growth concepts, enhancing intuitive understanding.",
+        "url": "/#feature",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/1.png"
+        }
+      },
+      {
+        "title": "Health Education",
+        "description": "Understand common percentile references through the Height Calculator. Professional advice should follow doctor's guidance.",
+        "url": "/#feature",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/2.png"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "name": "stats",
+    "label": "Statistics",
+    "title": "Users Love Height Calculator",
+    "description": "Height Calculator is easy to use, accurate, and privacy-friendly.",
+    "icon": "FaRegHeart",
+    "items": [
+      {
+        "title": "Served",
+        "label": "99+",
+        "description": "Families & Learners"
+      },
+      {
+        "title": "All-in-One Tools",
+        "label": "6+",
+        "description": "In Height Calculator"
+      },
+      {
+        "title": "Instant Calculation",
+        "label": "1s",
+        "description": "Common Scenario Time"
+      }
+    ]
+  },
+  "testimonial": {
+    "name": "testimonial",
+    "label": "User Reviews",
+    "title": "How People Rate Height Calculator",
+    "description": "Real feedback from families, students, and coaches about Height Calculator.",
+    "icon": "GoThumbsup",
+    "items": [
+      {
+        "title": "David Chen",
+        "label": "Parent",
+        "description": "Height Calculator helps us quickly convert centimeters to feet/inches and estimate our child's adult height with clear, reliable results.",
+        "image": {
+          "src": "/imgs/users/1.png"
+        }
+      },
+      {
+        "title": "Rachel Kim",
+        "label": "Coach",
+        "description": "I use Height Calculator for athlete height comparison and percentile reference, making training decisions more intuitive.",
+        "image": {
+          "src": "/imgs/users/2.png"
+        }
+      },
+      {
+        "title": "Marcus",
+        "label": "Student",
+        "description": "Height Calculator lets me easily show unit conversion and growth curves in assignments with very intuitive understanding.",
+        "image": {
+          "src": "/imgs/users/3.png"
+        }
+      },
+      {
+        "title": "Sofia",
+        "label": "Teacher",
+        "description": "In class, I use Height Calculator to explain percentiles and trend charts, students pick it up quickly.",
+        "image": {
+          "src": "/imgs/users/4.png"
+        }
+      },
+      {
+        "title": "James",
+        "label": "Research Assistant",
+        "description": "Height Calculator results are consistent with clear exports, it's my go-to for daily data processing.",
+        "image": {
+          "src": "/imgs/users/5.png"
+        }
+      },
+      {
+        "title": "Anna Zhang",
+        "label": "Family",
+        "description": "Height Calculator is privacy-friendly, free with instant results, works great on any device.",
+        "image": {
+          "src": "/imgs/users/6.png"
+        }
+      }
     ]
   },
   "faq": {
-    "title": "Height Calculator FAQ",
-    "items": [
-      { "title": "How accurate is the child height predictor?", "description": "It uses the mid-parental height formula and growth references. Results are estimates and not medical advice." },
-      { "title": "Can I convert cm to feet and inches?", "description": "Yes. Use the converter to get both decimal feet and feet+inches." },
-      { "title": "Do you store my data?", "description": "No. Calculations run instantly in the browser and are not saved." }
-    ]
-  },
-  "pricing": {
-    "title": "Pricing",
-    "description": "The core tools are free for everyone.",
+    "name": "faq",
+    "label": "FAQ",
+    "title": "Frequently Asked Questions About Height Calculator",
+    "description": "Answers to common questions about Height Calculator, unit conversion, height prediction, and percentiles.",
     "items": [
       {
-        "title": "Free",
-        "description": "All essential calculators.",
-        "features_title": "Includes",
-        "features": ["CM↔FT/IN Converter", "Child Height Predictor", "Height Percentile", "Growth Charts"],
-        "interval": "one-time",
-        "amount": 0,
-        "currency": "USD",
-        "price": "$0",
-        "unit": "USD",
-        "is_featured": true,
-        "tip": "No signup. No ads.",
-        "button": { "title": "Start Free", "url": "/#feature", "icon": "RiFlashlightFill" },
-        "product_id": "free",
-        "product_name": "Height Calculator Free"
+        "title": "How accurate is child height prediction?",
+        "description": "Height Calculator uses common mid-parental height method and growth references for estimation. Height Calculator results are for educational and planning reference, not medical advice."
+      },
+      {
+        "title": "Can I convert centimeters to feet and inches?",
+        "description": "Yes. Height Calculator supports instant conversion between centimeters and feet/inches, outputting both decimal feet and feet+inches formats."
+      },
+      {
+        "title": "Do you save my data?",
+        "description": "No. Height Calculator runs locally in the browser, doesn't store personal information, and requires no login."
+      },
+      {
+        "title": "Where do percentile references come from?",
+        "description": "Height Calculator references common growth data for learning and education. For clinical judgment, please consult professionals."
+      },
+      {
+        "title": "Is Height Calculator free?",
+        "description": "Yes. Height Calculator's core features are free to use with no registration required. Optional enhanced features may be offered later."
+      },
+      {
+        "title": "Can I compare multiple people's heights?",
+        "description": "Yes. Height Calculator supports multi-object comparison, convenient for unified standards in families, classrooms, or training."
+      }
+    ]
+  },
+  "cta": {
+    "name": "cta",
+    "title": "Use Height Calculator Now",
+    "description": "Complete conversion, prediction, percentiles, and growth charts in the same Height Calculator.",
+    "buttons": [
+      {
+        "title": "Open Height Calculator",
+        "url": "/#feature",
+        "target": "_self",
+        "icon": "GoArrowUpRight"
+      },
+      {
+        "title": "Read Guide",
+        "url": "/#faq",
+        "target": "_self",
+        "variant": "outline"
       }
     ]
   },
   "footer": {
+    "name": "footer",
     "brand": {
       "title": "Height Calculator",
-      "description": "Free online height tools: conversions, predictors, percentiles and growth charts.",
-      "logo": { "src": "/logo.png", "alt": "Height Calculator" },
+      "description": "A free, privacy-first Height Calculator providing conversion, prediction, percentiles, and growth chart tools.",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Height Calculator"
+      },
       "url": "/"
+    },
+    "copyright": "© 2025 • Height Calculator All Rights Reserved.",
+    "nav": {
+      "items": [
+        {
+          "title": "About",
+          "children": [
+            {
+              "title": "Calculators",
+              "url": "/#feature",
+              "target": "_self"
+            },
+            {
+              "title": "Growth Charts",
+              "url": "/#usage",
+              "target": "_self"
+            },
+            {
+              "title": "FAQ",
+              "url": "/#faq",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Resources",
+          "children": [
+            {
+              "title": "User Guide",
+              "url": "/#faq",
+              "target": "_self"
+            },
+            {
+              "title": "Unit Conversion",
+              "url": "/#feature",
+              "target": "_self"
+            },
+            {
+              "title": "Height Prediction",
+              "url": "/#feature",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Links",
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "X",
+          "icon": "RiTwitterXFill",
+          "url": "https://x.com/shipanyai",
+          "target": "_blank"
+        },
+        {
+          "title": "Github",
+          "icon": "RiGithubFill",
+          "url": "https://github.com/shipanyai",
+          "target": "_blank"
+        },
+        {
+          "title": "Discord",
+          "icon": "RiDiscordFill",
+          "url": "https://discord.gg/HQNnrzjZQS",
+          "target": "_blank"
+        },
+        {
+          "title": "Email",
+          "icon": "RiMailLine",
+          "url": "mailto:support@heightcalculator.com",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "Terms of Service",
+          "url": "/terms-of-service"
+        }
+      ]
     }
   }
 }

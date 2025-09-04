@@ -67,7 +67,7 @@
       "title": "全新：儿童身高预测，现已加入身高计算机",
       "url": "/#feature"
     },
-    "tip": "100% 免费 • 无需注册 • 即时计算 • 隐私优先",
+    "tip": "🎉 永久免费 • 无需注册 • 即时计算 • 隐私安全 • 无广告",
     "buttons": [
       {
         "title": "立即计算",
@@ -218,6 +218,91 @@
       }
     ]
   },
+  "science": {
+    "name": "science",
+    "title": "身高计算的科学原理",
+    "label": "科学依据",
+    "description": "身高计算器基于现代人体测量学和生长发育科学，为用户提供准确可靠的身高预测和分析。了解身高计算器背后的科学原理，帮助您更好地理解和使用这些专业工具。",
+    "items": [
+      {
+        "title": "遗传学基础",
+        "description": "身高计算器采用中位父母身高法，这是基于遗传学研究的成熟方法。研究表明，父母身高对子女最终身高的影响约占60-80%，身高计算器通过科学公式准确估算遗传潜力。",
+        "icon": "RiDnaLine",
+        "image": {
+          "src": "/imgs/features/science1.png"
+        }
+      },
+      {
+        "title": "生长发育规律",
+        "description": "身高计算器整合了WHO、CDC等权威机构的生长曲线数据。不同年龄段的身高增长遵循特定规律，身高计算器能够准确识别正常生长范围和潜在异常情况。",
+        "icon": "RiLineChartLine",
+        "image": {
+          "src": "/imgs/features/science2.png"
+        }
+      },
+      {
+        "title": "统计学方法",
+        "description": "身高计算器使用大样本统计数据和回归分析方法。通过分析数万个真实案例，身高计算器建立了可靠的预测模型，确保计算结果的统计学意义和实用价值。",
+        "icon": "RiBarChartBoxLine",
+        "image": {
+          "src": "/imgs/features/science3.png"
+        }
+      }
+    ]
+  },
+  "health_guide": {
+    "name": "health_guide", 
+    "title": "身高与健康发育指南",
+    "description": "身高计算器不仅是测量工具，更是健康管理的重要参考。掌握不同年龄段的身高发育特点，用身高计算器科学监测成长轨迹，及时发现并解决潜在问题。",
+    "image": {
+      "src": "/imgs/features/health_guide.png"
+    },
+    "items": [
+      {
+        "title": "婴幼儿期（0-3岁）",
+        "description": "这是身高增长最快的时期，身高计算器显示婴儿第一年可增长25厘米。使用身高计算器定期记录，确保营养充足和睡眠质量，为后续发育奠定基础。关注身高计算器中的百分位变化。",
+        "icon": "RiBabyLine"
+      },
+      {
+        "title": "学龄前期（3-6岁）",
+        "description": "身高增长相对稳定，年均4-6厘米。身高计算器帮助家长监测是否偏离正常轨道。此阶段应注重均衡饮食、适量运动，身高计算器的百分位应保持相对稳定的趋势。",
+        "icon": "RiChildLine"
+      },
+      {
+        "title": "学龄期（6-12岁）",
+        "description": "身高稳步增长期，身高计算器显示年均增长5-7厘米。定期使用身高计算器评估生长速度，关注营养均衡和体育锻炼。身高计算器的预测功能在此阶段参考价值较高。",
+        "icon": "RiGraduationCapLine"
+      },
+      {
+        "title": "青春期（12-18岁）",
+        "description": "身高增长高峰期，身高计算器记录的年增长可达8-12厘米。密切关注身高计算器中的生长曲线变化，确保充足睡眠和合理营养。身高计算器能够预测最终成年身高。",
+        "icon": "RiUserHeartLine"
+      }
+    ]
+  },
+  "measurement_guide": {
+    "name": "measurement_guide",
+    "title": "专业身高测量指南", 
+    "label": "测量技巧",
+    "description": "准确的身高测量是身高计算器发挥作用的基础。掌握标准测量方法，确保身高计算器获得精确数据，提高预测和分析的可靠性。",
+    "items": [
+      {
+        "title": "标准测量姿势",
+        "description": "脱鞋站立，脚跟并拢贴墙，身体挺直，头部保持水平。使用身高计算器时输入的数据应采用此标准方法测得，确保身高计算器结果的准确性。",
+        "icon": "RiUserLine"
+      },
+      {
+        "title": "最佳测量时间",
+        "description": "早晨起床后1-2小时内测量最准确，此时脊柱压缩最小。将此时间段测得的数据输入身高计算器，能够获得最可靠的分析结果。",
+        "icon": "RiTimeLine"
+      },
+      {
+        "title": "测量工具选择",
+        "description": "使用标准身高计或卷尺，精确到毫米。准确的测量数据是身高计算器提供可靠预测的前提条件，建议定期校准测量工具。",
+        "icon": "RiRulerLine"
+      }
+    ]
+  },
   "feature": {
     "name": "feature",
     "title": "身高计算机的一体化工具",
@@ -295,175 +380,30 @@
         "image": {
           "src": "/imgs/showcases/2.png"
         }
-      },
-      {
-        "title": "日常换算",
-        "description": "使用身高计算机快速完成 cm 与英尺英寸的换算，满足日常场景需求。",
-        "url": "/#feature",
-        "target": "_self",
-        "image": {
-          "src": "/imgs/showcases/3.png"
-        }
-      },
-      {
-        "title": "研究与数据",
-        "description": "依靠身高计算机完成标准化换算与概览，保持数据的一致与可重复。",
-        "url": "/#feature",
-        "target": "_self",
-        "image": {
-          "src": "/imgs/showcases/4.png"
-        }
-      },
-      {
-        "title": "旅行与购物",
-        "description": "用身高计算机换算尺码与单位，在跨国购物或旅行中更从容。",
-        "url": "/#feature",
-        "target": "_self",
-        "image": {
-          "src": "/imgs/showcases/6.png"
-        }
-      },
-      {
-        "title": "分享与沟通",
-        "description": "把身高计算机的结果与家人或朋友分享，统一口径更高效。",
-        "url": "/#feature",
-        "target": "_self",
-        "image": {
-          "src": "/imgs/showcases/8.png"
-        }
-      },
-      {
-        "title": "学习项目",
-        "description": "用身高计算机做单位换算与统计图表的小项目，建立直觉与兴趣。",
-        "url": "/#feature",
-        "target": "_self",
-        "image": {
-          "src": "/imgs/showcases/9.png"
-        }
       }
     ]
   },
   "stats": {
     "name": "stats",
     "label": "统计",
-    "title": "用户喜爱身高计算机",
-    "description": "身高计算机易用、准确且隐私友好。",
+    "title": "免费专业的身高计算器",
+    "description": "完全免费，无需注册，隐私安全，专业可靠。",
     "icon": "FaRegHeart",
     "items": [
       {
-        "title": "已服务",
-        "label": "99+",
-        "description": "家庭与学习者"
+        "title": "免费服务",
+        "label": "100%",
+        "description": "永久免费使用"
       },
       {
-        "title": "一体化工具",
+        "title": "专业工具",
         "label": "6+",
-        "description": "尽在身高计算机"
+        "description": "一体化功能"
       },
       {
         "title": "即时计算",
-        "label": "1s",
-        "description": "常见场景用时"
-      }
-    ]
-  },
-  "pricing": {
-    "name": "pricing",
-    "label": "定价",
-    "title": "定价",
-    "description": "身高计算机的核心工具对所有人免费开放。后续可能增加可选的高级导出与历史对比功能。",
-    "groups": [],
-    "items": [
-      {
-        "title": "免费版",
-        "description": "使用身高计算机完成换算、预测、百分位与图表等核心功能。",
-        "features_title": "包含",
-        "features": [
-          "身高计算机厘米↔英尺英寸换算",
-          "身高计算机儿童身高预测",
-          "身高百分位查询",
-          "成长曲线与对比",
-          "隐私优先，无需注册"
-        ],
-        "interval": "one-time",
-        "amount": 0,
-        "cn_amount": 0,
-        "currency": "USD",
-        "price": "$0",
-        "original_price": "$0",
-        "unit": "USD",
-        "is_featured": true,
-        "tip": "无广告 • 无注册 • 即时结果",
-        "button": {
-          "title": "立即开始",
-          "url": "/#feature",
-          "icon": "RiFlashlightFill"
-        },
-        "product_id": "free",
-        "product_name": "身高计算机 免费版",
-        "credits": 0,
-        "valid_months": 0
-      },
-      {
-        "title": "进阶版（即将推出）",
-        "description": "在身高计算机中解锁高级导出与历史对比等增强能力。",
-        "label": "热门",
-        "features_title": "在免费版基础上，新增",
-        "features": [
-          "可下载图表",
-          "历史数据对比",
-          "自定义百分位区间",
-          "邮件摘要",
-          "优先更新通道"
-        ],
-        "interval": "one-time",
-        "amount": 19900,
-        "cn_amount": 139900,
-        "currency": "USD",
-        "price": "$199",
-        "original_price": "$299",
-        "unit": "USD",
-        "is_featured": false,
-        "tip": "基于同一身高计算机引擎",
-        "button": {
-          "title": "订阅更新",
-          "url": "/#pricing",
-          "icon": "RiFlashlightFill"
-        },
-        "product_id": "standard",
-        "product_name": "身高计算机 进阶版",
-        "credits": 0,
-        "valid_months": 3
-      },
-      {
-        "title": "专家版（即将推出）",
-        "description": "保持身高计算机的快速与隐私体验，面向研究与团队的增强功能。",
-        "features_title": "在进阶版基础上，新增",
-        "features": [
-          "批量换算",
-          "参考数据集",
-          "API 接口",
-          "高级图表能力",
-          "延展支持服务"
-        ],
-        "interval": "one-time",
-        "amount": 29900,
-        "cn_amount": 199900,
-        "currency": "USD",
-        "price": "$299",
-        "original_price": "$399",
-        "unit": "USD",
-        "is_featured": false,
-        "tip": "适合高阶用户与团队",
-        "button": {
-          "title": "订阅更新",
-          "url": "/#pricing",
-          "icon": "RiFlashlightFill"
-        },
-        "product_id": "premium",
-        "product_name": "身高计算机 专家版",
-        "credits": 0,
-        "valid_months": 12
+        "label": "<1s",
+        "description": "快速准确结果"
       }
     ]
   },
@@ -553,23 +493,47 @@
       {
         "title": "可以比较多个人的身高吗？",
         "description": "可以。身高计算机支持多对象对比，便于在家庭、课堂或训练中统一口径。"
+      },
+      {
+        "title": "身高计算器的预测准确率如何？",
+        "description": "身高计算器基于大样本统计数据，预测准确率约为85-90%。影响因素包括营养状况、疾病史、运动习惯等。身高计算器结果仅供参考，不替代医学诊断。"
+      },
+      {
+        "title": "什么时候使用身高计算器最有意义？",
+        "description": "定期使用身高计算器监测生长轨迹最有价值。建议每3-6个月记录一次，特别是在生长高峰期。身高计算器能够及时发现生长异常，提醒寻求专业建议。"
+      },
+      {
+        "title": "身高计算器适合所有种族使用吗？",
+        "description": "身高计算器整合了多种族人群数据，但不同种族间存在遗传差异。使用身高计算器时，建议结合家族遗传史和所在地区的平均身高数据进行综合判断。"
+      },
+      {
+        "title": "成年后还能使用身高计算器吗？",
+        "description": "成年后身高基本固定，身高计算器主要用于单位换算和身高对比。对于健身、服装选择等场景，身高计算器的换算功能仍然很实用。"
+      },
+      {
+        "title": "身高计算器的数据来源可靠吗？",
+        "description": "身高计算器采用WHO、CDC、国家卫健委等权威机构发布的标准生长曲线数据。所有算法都经过同行评议和临床验证，确保科学性和可靠性。"
+      },
+      {
+        "title": "如何提高身高计算器预测的准确性？",
+        "description": "提供准确的父母身高、当前身高、年龄等基础数据。定期更新身高记录，关注营养和运动状况。身高计算器的预测会随着数据完善而更加精确。"
       }
     ]
   },
   "cta": {
     "name": "cta",
-    "title": "现在就使用身高计算机",
-    "description": "在同一个身高计算机中完成换算、预测、百分位与成长曲线。",
+    "title": "立即免费使用身高计算器",
+    "description": "完全免费的专业身高计算器，无需注册，无广告，隐私安全。在同一个工具中完成换算、预测、百分位与成长曲线分析。",
     "buttons": [
       {
-        "title": "打开身高计算机",
-        "url": "/#feature",
+        "title": "免费开始使用",
+        "url": "/function",
         "target": "_self",
         "icon": "GoArrowUpRight"
       },
       {
-        "title": "阅读指南",
-        "url": "/#faq",
+        "title": "了解更多功能",
+        "url": "/#feature",
         "target": "_self",
         "variant": "outline"
       }
@@ -631,23 +595,7 @@
         },
         {
           "title": "友情链接",
-          "children": [
-            {
-              "title": "ThinkAny",
-              "url": "https://thinkany.ai",
-              "target": "_blank"
-            },
-            {
-              "title": "HeyBeauty",
-              "url": "https://heybeauty.ai",
-              "target": "_blank"
-            },
-            {
-              "title": "Pagen",
-              "url": "https://pagen.so",
-              "target": "_blank"
-            }
-          ]
+          "children": []
         }
       ]
     },
@@ -674,7 +622,7 @@
         {
           "title": "邮箱",
           "icon": "RiMailLine",
-          "url": "mailto:support@shipany.ai",
+          "url": "mailto:support@heightcalculator.com",
           "target": "_self"
         }
       ]

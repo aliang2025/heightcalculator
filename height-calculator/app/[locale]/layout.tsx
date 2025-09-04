@@ -22,6 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations();
+  const baseUrl = process.env.NEXT_PUBLIC_WEB_URL || 'https://heightcalculator.com';
 
   return {
     title: {
@@ -38,6 +39,50 @@ export async function generateMetadata({
     },
     formatDetection: {
       telephone: false,
+    },
+    alternates: {
+      canonical: locale === 'en' ? baseUrl : `${baseUrl}/${locale}`,
+      languages: {
+        'en': baseUrl,
+        'zh': `${baseUrl}/zh`,
+        'x-default': baseUrl,
+      },
+    },
+    openGraph: {
+      title: t("metadata.title") || "",
+      description: t("metadata.description") || "",
+      url: locale === 'en' ? baseUrl : `${baseUrl}/${locale}`,
+      siteName: t("metadata.title") || "",
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: `${baseUrl}/logo.png`,
+          width: 1200,
+          height: 630,
+          alt: t("metadata.title") || "",
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t("metadata.title") || "",
+      description: t("metadata.description") || "",
+      images: [`${baseUrl}/logo.png`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
     },
   };
 }

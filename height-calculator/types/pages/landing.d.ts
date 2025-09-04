@@ -2,6 +2,7 @@ import { Header } from "@/types/blocks/header";
 import { Hero } from "@/types/blocks/hero";
 import { Section } from "@/types/blocks/section";
 import { Footer } from "@/types/blocks/footer";
+import { Pricing } from "@/types/blocks/pricing";
 
 export interface LandingPage {
   header?: Header;
@@ -9,6 +10,9 @@ export interface LandingPage {
   branding?: Section;
   introduce?: Section;
   benefit?: Section;
+  science?: Section;
+  health_guide?: Section;
+  measurement_guide?: Section;
   usage?: Section;
   feature?: Section;
   showcase?: Section;

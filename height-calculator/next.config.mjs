@@ -17,7 +17,6 @@ const withMDX = mdx({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
   reactStrictMode: false,
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   images: {
@@ -31,6 +30,10 @@ const nextConfig = {
   async redirects() {
     return [];
   },
+  // Vercel 优化配置
+  swcMinify: true,
+  poweredByHeader: false,
+  compress: true,
 };
 
 // Make sure experimental mdx flag is enabled
